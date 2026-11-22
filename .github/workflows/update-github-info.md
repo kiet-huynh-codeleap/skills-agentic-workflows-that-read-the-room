@@ -46,7 +46,11 @@ You keep Mona's GitHub Info website current with practical, source-backed GitHub
 
 - Read repository files such as `notes/mona-notes.md` and `site/content/github-info.md` with the GitHub repository API tools. Do not use terminal, CLI, or sandboxed shell commands to read repository guidance or reference files.
 - Read external public pages (the GitHub Blog, the GitHub Changelog, and Awesome Copilot workflows) with the `web-fetch` tool.
-- If the `web-fetch` tool is not available in your tool list, fetch those same public pages with `curl -sL <url>` in bash instead. Only use `curl` for the source URLs listed above; the firewall only allows github.com, github.blog, and awesome-copilot.github.com.
+- If the `web-fetch` tool is not available in your tool list, fetch those same public pages with `curl` in bash instead. Bash only allows commands that start with `curl`, so run each fetch as its own standalone command with nothing before or after it, exactly like:
+  - `curl -sL https://github.blog/latest/`
+  - `curl -sL https://github.blog/changelog/`
+  - `curl -sL https://awesome-copilot.github.com/workflows/`
+  Do not wrap `curl` in `cd`, loops, `&&`, `;`, pipes, or output redirection; those are rejected. Only use `curl` for the source URLs listed above; the firewall only allows github.com, github.blog, and awesome-copilot.github.com.
 
 ## Steps
 
