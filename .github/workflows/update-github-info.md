@@ -12,6 +12,7 @@ engine:
 tools:
   edit:
   web-fetch:
+  bash: ["curl:*"]
   github:
     mode: gh-proxy
     toolsets: [repos]
@@ -45,6 +46,7 @@ You keep Mona's GitHub Info website current with practical, source-backed GitHub
 
 - Read repository files such as `notes/mona-notes.md` and `site/content/github-info.md` with the GitHub repository API tools. Do not use terminal, CLI, or sandboxed shell commands to read repository guidance or reference files.
 - Read external public pages (the GitHub Blog, the GitHub Changelog, and Awesome Copilot workflows) with the `web-fetch` tool.
+- If the `web-fetch` tool is not available in your tool list, fetch those same public pages with `curl -sL <url>` in bash instead. Only use `curl` for the source URLs listed above; the firewall only allows github.com, github.blog, and awesome-copilot.github.com.
 
 ## Steps
 
